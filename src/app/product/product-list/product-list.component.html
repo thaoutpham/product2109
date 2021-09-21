@@ -1,0 +1,28 @@
+<h1>Danh sách sản phẩm</h1>
+<table class="table table-sm">
+  <thead>
+  <tr>
+    <th scope="col">STT</th>
+    <th scope="col">Tên</th>
+    <th scope="col">Giá</th>
+    <th scope="col">Mô tả</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products; index as i" scope="row">
+    <td>{{i + 1}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td><a [routerLink]="['/product/edit/',product.id]"><img style="width: 30px; height: 30px"
+                                                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeAppqbklWDo0WTJP5tTTQYm6a79lrA8AS2Q&usqp=CAU"
+                                                             alt=""></a></td>
+    <td><a [routerLink]="['/product/delete/',product.id]"><img style="width: 30px; height: 30px"
+                                                               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2gkf-qnBh1n8wK6JslmCZUO4ylTWb8clRKw&usqp=CAU"
+                                                               alt=""></a></td>
+  </tr>
+
+  </tbody>
+</table>
